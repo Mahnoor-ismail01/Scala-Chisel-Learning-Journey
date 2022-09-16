@@ -1,4 +1,4 @@
-package practice
+package labno1
 import chisel3.stage.ChiselStage
 import chisel3 . _
 class Counter ( size : Int , maxValue : Int ) extends Module {
