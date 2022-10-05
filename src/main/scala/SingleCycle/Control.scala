@@ -54,8 +54,9 @@ class  ControlAndType_Decode extends Module{
          io.AluOp:="b101".U
          io.Operand_A_sel:="b00".U
          io.Operand_B_sel:=1.B
+         io.Extend_sel:=1.U
     }
-    when(io.opcode===0110011){
+    when(io.opcode==="b0110011".U){
         //io.R_format:=1.B
         io.RegWrite:=1.B
         io.AluOp:="b000".U
@@ -64,41 +65,44 @@ class  ControlAndType_Decode extends Module{
 
 
     }
-    when(io.opcode===1101111){
+    when(io.opcode==="b1101111".U){
         //io.jal:=1.B
         io.RegWrite:=1.B
         io.AluOp:="b011".U
          io.Operand_A_sel:="b10".U
          io.Operand_B_sel:=0.B
     }
-    when(io.opcode===0010011){
+    when(io.opcode==="b0010011".U){
         //io.I_Type:=1.B
         io.RegWrite:=1.B
         io.AluOp:="b001".U
          io.Operand_A_sel:="b00".U
          io.Operand_B_sel:=1.B
+         io.Extend_sel:=0.U
     }
-    when(io.opcode===1100111){
+    when(io.opcode==="b1100111".U){
         //io.jalr:=1.B
         io.RegWrite:=1.B
         io.AluOp:="b011".U
          io.Operand_A_sel:="b10".U
          io.Operand_B_sel:=0.B
     }
-    when(io.opcode===1100011){
+    when(io.opcode==="b1100011".U){
         //io.opcode_Branch:=1.B//sb
         io.Branch:=1.B
         io.AluOp:="b010".U
          io.Operand_A_sel:="b00".U
          io.Operand_B_sel:=0.B
     }
-    when(io.opcode===0110111){
+    when(io.opcode==="b0110111".U){
         io.RegWrite:=1.B
         io.AluOp:="b110".U
          io.Operand_A_sel:="b11".U
          io.Operand_B_sel:=1.B
-        //io.lui:=1.B
+         io.Extend_sel:=2.U
+        //io.lui:=1.B u
     }
+   
     
 
 

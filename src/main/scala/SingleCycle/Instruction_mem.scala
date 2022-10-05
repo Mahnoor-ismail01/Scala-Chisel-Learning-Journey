@@ -2,7 +2,8 @@ package SingleCycle
 import chisel3._
 import chisel3.util._
 import chisel3.util.experimental.loadMemoryFromFile
-import scala.io.source
+import scala.io.Source
+
 
 class Instruction_Memory extends Module{
 val io=IO(new Bundle{
@@ -11,7 +12,8 @@ val io=IO(new Bundle{
 
 }
 )
-val imem=Mem(1024 ,32.U )
-loadMemoryFromFile(imem,/home/mano/Documents/Myfile.hex )
+io.inst:=0.U
+val imem=Mem(1024 ,UInt(32.W) )
+loadMemoryFromFile(imem,"/home/mano/myfile.hex")//Myfile.hex )
 io.inst:=imem(io.addr/4.U)
 }
